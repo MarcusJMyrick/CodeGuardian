@@ -1,0 +1,146 @@
+<div>
+  <div>
+    <h1>
+      Bug report #<%= @the_bug_report.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/bug_reports">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_bug_report/<%= @the_bug_report.id %>">
+          Delete bug report
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Project
+      </dt>
+      <dd>
+        <%= @the_bug_report.project_id %>
+      </dd>
+
+      <dt>
+        Hacker
+      </dt>
+      <dd>
+        <%= @the_bug_report.hacker_id %>
+      </dd>
+
+      <dt>
+        Title
+      </dt>
+      <dd>
+        <%= @the_bug_report.title %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_bug_report.description %>
+      </dd>
+
+      <dt>
+        Severity level
+      </dt>
+      <dd>
+        <%= @the_bug_report.severity_level %>
+      </dd>
+
+      <dt>
+        Status
+      </dt>
+      <dd>
+        <%= @the_bug_report.status %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_bug_report.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_bug_report.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit bug report
+    </h2>
+
+    <form action="/modify_bug_report/<%= @the_bug_report.id %>"  method="post" >
+      <div>
+        <label for="project_id_box">
+          Project
+        </label>
+
+        <input type="text" id="project_id_box" name="query_project_id" value="<%= @the_bug_report.project_id %>">
+      </div>
+
+      <div>
+        <label for="hacker_id_box">
+          Hacker
+        </label>
+
+        <input type="text" id="hacker_id_box" name="query_hacker_id" value="<%= @the_bug_report.hacker_id %>">
+      </div>
+
+      <div>
+        <label for="title_box">
+          Title
+        </label>
+
+        <input type="text" id="title_box" name="query_title" value="<%= @the_bug_report.title %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description"><%= @the_bug_report.description %></textarea>
+      </div>
+
+      <div>
+        <label for="severity_level_box">
+          Severity level
+        </label>
+
+        <input type="text" id="severity_level_box" name="query_severity_level" value="<%= @the_bug_report.severity_level %>">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status" value="<%= @the_bug_report.status %>">
+      </div>
+
+      <button>
+        Update bug report
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

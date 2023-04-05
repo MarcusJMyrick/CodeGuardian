@@ -1,0 +1,134 @@
+<div>
+  <div>
+    <h1>
+      List of all bounties
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new bounty
+    </h2>
+
+    <form action="/insert_bounty" method="post">
+      <div>
+        <label for="bug_report_id_box">
+          Bug report
+        </label>
+
+        <input type="text" id="bug_report_id_box" name="query_bug_report_id">
+      </div>
+
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
+
+        <input type="text" id="company_id_box" name="query_company_id">
+      </div>
+
+      <div>
+        <label for="amount_box">
+          Amount
+        </label>
+
+        <input type="text" id="amount_box" name="query_amount">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status">
+      </div>
+
+      <button>
+        Create bounty
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Bug report
+        </th>
+
+        <th>
+          Company
+        </th>
+
+        <th>
+          Amount
+        </th>
+
+        <th>
+          Status
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_bounties.each do |a_bounty| %>
+      <tr>
+        <td>
+          <%= a_bounty.id %>
+        </td>
+
+        <td>
+          <%= a_bounty.bug_report_id %>
+        </td>
+
+        <td>
+          <%= a_bounty.company_id %>
+        </td>
+
+        <td>
+          <%= a_bounty.amount %>
+        </td>
+
+        <td>
+          <%= a_bounty.status %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_bounty.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_bounty.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/bounties/<%= a_bounty.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

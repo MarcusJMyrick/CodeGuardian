@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all company representatives
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new company representative
+    </h2>
+
+    <form action="/insert_company_representative" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
+
+        <input type="text" id="company_id_box" name="query_company_id">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <button>
+        Create company representative
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Company
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_company_representatives.each do |a_company_representative| %>
+      <tr>
+        <td>
+          <%= a_company_representative.id %>
+        </td>
+
+        <td>
+          <%= a_company_representative.user_id %>
+        </td>
+
+        <td>
+          <%= a_company_representative.company_id %>
+        </td>
+
+        <td>
+          <%= a_company_representative.name %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_company_representative.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_company_representative.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/company_representatives/<%= a_company_representative.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

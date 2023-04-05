@@ -1,0 +1,166 @@
+<div>
+  <div>
+    <h1>
+      List of all bug reports
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new bug report
+    </h2>
+
+    <form action="/insert_bug_report" method="post">
+      <div>
+        <label for="project_id_box">
+          Project
+        </label>
+
+        <input type="text" id="project_id_box" name="query_project_id">
+      </div>
+
+      <div>
+        <label for="hacker_id_box">
+          Hacker
+        </label>
+
+        <input type="text" id="hacker_id_box" name="query_hacker_id">
+      </div>
+
+      <div>
+        <label for="title_box">
+          Title
+        </label>
+
+        <input type="text" id="title_box" name="query_title">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="severity_level_box">
+          Severity level
+        </label>
+
+        <input type="text" id="severity_level_box" name="query_severity_level">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status">
+      </div>
+
+      <button>
+        Create bug report
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Project
+        </th>
+
+        <th>
+          Hacker
+        </th>
+
+        <th>
+          Title
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Severity level
+        </th>
+
+        <th>
+          Status
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_bug_reports.each do |a_bug_report| %>
+      <tr>
+        <td>
+          <%= a_bug_report.id %>
+        </td>
+
+        <td>
+          <%= a_bug_report.project_id %>
+        </td>
+
+        <td>
+          <%= a_bug_report.hacker_id %>
+        </td>
+
+        <td>
+          <%= a_bug_report.title %>
+        </td>
+
+        <td>
+          <%= a_bug_report.description %>
+        </td>
+
+        <td>
+          <%= a_bug_report.severity_level %>
+        </td>
+
+        <td>
+          <%= a_bug_report.status %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_bug_report.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_bug_report.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/bug_reports/<%= a_bug_report.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

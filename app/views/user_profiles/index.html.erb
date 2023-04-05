@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all user profiles
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new user profile
+    </h2>
+
+    <form action="/insert_user_profile" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="bio_box">
+          Bio
+        </label>
+
+        <textarea id="bio_box" name="query_bio" rows="3"></textarea>
+      </div>
+
+      <button>
+        Create user profile
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Bio
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_user_profiles.each do |a_user_profile| %>
+      <tr>
+        <td>
+          <%= a_user_profile.id %>
+        </td>
+
+        <td>
+          <%= a_user_profile.name %>
+        </td>
+
+        <td>
+          <%= a_user_profile.user_id %>
+        </td>
+
+        <td>
+          <%= a_user_profile.bio %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_user_profile.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_user_profile.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/user_profiles/<%= a_user_profile.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

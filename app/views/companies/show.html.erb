@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Company #<%= @the_company.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/companies">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_company/<%= @the_company.id %>">
+          Delete company
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_company.name %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_company.description %>
+      </dd>
+
+      <dt>
+        Website
+      </dt>
+      <dd>
+        <%= @the_company.website %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_company.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_company.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit company
+    </h2>
+
+    <form action="/modify_company/<%= @the_company.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_company.name %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description"><%= @the_company.description %></textarea>
+      </div>
+
+      <div>
+        <label for="website_box">
+          Website
+        </label>
+
+        <input type="text" id="website_box" name="query_website" value="<%= @the_company.website %>">
+      </div>
+
+      <button>
+        Update company
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

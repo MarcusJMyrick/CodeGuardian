@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Company representative #<%= @the_company_representative.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/company_representatives">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_company_representative/<%= @the_company_representative.id %>">
+          Delete company representative
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_company_representative.user_id %>
+      </dd>
+
+      <dt>
+        Company
+      </dt>
+      <dd>
+        <%= @the_company_representative.company_id %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_company_representative.name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_company_representative.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_company_representative.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit company representative
+    </h2>
+
+    <form action="/modify_company_representative/<%= @the_company_representative.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_company_representative.user_id %>">
+      </div>
+
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
+
+        <input type="text" id="company_id_box" name="query_company_id" value="<%= @the_company_representative.company_id %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_company_representative.name %>">
+      </div>
+
+      <button>
+        Update company representative
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

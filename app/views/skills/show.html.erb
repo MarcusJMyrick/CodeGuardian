@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Skill #<%= @the_skill.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/skills">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_skill/<%= @the_skill.id %>">
+          Delete skill
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Skill
+      </dt>
+      <dd>
+        <%= @the_skill.skill %>
+      </dd>
+
+      <dt>
+        User profile
+      </dt>
+      <dd>
+        <%= @the_skill.user_profile_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_skill.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_skill.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit skill
+    </h2>
+
+    <form action="/modify_skill/<%= @the_skill.id %>"  method="post" >
+      <div>
+        <label for="skill_box">
+          Skill
+        </label>
+
+        <input type="text" id="skill_box" name="query_skill" value="<%= @the_skill.skill %>">
+      </div>
+
+      <div>
+        <label for="user_profile_id_box">
+          User profile
+        </label>
+
+        <input type="text" id="user_profile_id_box" name="query_user_profile_id" value="<%= @the_skill.user_profile_id %>">
+      </div>
+
+      <button>
+        Update skill
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

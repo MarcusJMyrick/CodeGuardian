@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Bounty #<%= @the_bounty.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/bounties">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_bounty/<%= @the_bounty.id %>">
+          Delete bounty
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Bug report
+      </dt>
+      <dd>
+        <%= @the_bounty.bug_report_id %>
+      </dd>
+
+      <dt>
+        Company
+      </dt>
+      <dd>
+        <%= @the_bounty.company_id %>
+      </dd>
+
+      <dt>
+        Amount
+      </dt>
+      <dd>
+        <%= @the_bounty.amount %>
+      </dd>
+
+      <dt>
+        Status
+      </dt>
+      <dd>
+        <%= @the_bounty.status %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_bounty.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_bounty.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit bounty
+    </h2>
+
+    <form action="/modify_bounty/<%= @the_bounty.id %>"  method="post" >
+      <div>
+        <label for="bug_report_id_box">
+          Bug report
+        </label>
+
+        <input type="text" id="bug_report_id_box" name="query_bug_report_id" value="<%= @the_bounty.bug_report_id %>">
+      </div>
+
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
+
+        <input type="text" id="company_id_box" name="query_company_id" value="<%= @the_bounty.company_id %>">
+      </div>
+
+      <div>
+        <label for="amount_box">
+          Amount
+        </label>
+
+        <input type="text" id="amount_box" name="query_amount" value="<%= @the_bounty.amount %>">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status" value="<%= @the_bounty.status %>">
+      </div>
+
+      <button>
+        Update bounty
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

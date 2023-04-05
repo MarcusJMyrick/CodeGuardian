@@ -1,0 +1,134 @@
+<div>
+  <div>
+    <h1>
+      List of all projects
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new project
+    </h2>
+
+    <form action="/insert_project" method="post">
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
+
+        <input type="text" id="company_id_box" name="query_company_id">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="repository_url_box">
+          Repository url
+        </label>
+
+        <input type="text" id="repository_url_box" name="query_repository_url">
+      </div>
+
+      <button>
+        Create project
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Company
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Repository url
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_projects.each do |a_project| %>
+      <tr>
+        <td>
+          <%= a_project.id %>
+        </td>
+
+        <td>
+          <%= a_project.company_id %>
+        </td>
+
+        <td>
+          <%= a_project.name %>
+        </td>
+
+        <td>
+          <%= a_project.description %>
+        </td>
+
+        <td>
+          <%= a_project.repository_url %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_project.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_project.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/projects/<%= a_project.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

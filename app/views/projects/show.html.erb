@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Project #<%= @the_project.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/projects">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_project/<%= @the_project.id %>">
+          Delete project
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Company
+      </dt>
+      <dd>
+        <%= @the_project.company_id %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_project.name %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_project.description %>
+      </dd>
+
+      <dt>
+        Repository url
+      </dt>
+      <dd>
+        <%= @the_project.repository_url %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_project.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_project.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit project
+    </h2>
+
+    <form action="/modify_project/<%= @the_project.id %>"  method="post" >
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
+
+        <input type="text" id="company_id_box" name="query_company_id" value="<%= @the_project.company_id %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_project.name %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description"><%= @the_project.description %></textarea>
+      </div>
+
+      <div>
+        <label for="repository_url_box">
+          Repository url
+        </label>
+
+        <input type="text" id="repository_url_box" name="query_repository_url" value="<%= @the_project.repository_url %>">
+      </div>
+
+      <button>
+        Update project
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
