@@ -38,6 +38,13 @@
 
         <textarea id="bio_box" name="query_bio" rows="3"></textarea>
       </div>
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image">
+      </div>
 
       <button>
         Create user profile
@@ -65,6 +72,9 @@
 
         <th>
           Bio
+        </th>
+        <th>
+          Image
         </th>
 
         <th>
@@ -95,6 +105,10 @@
 
         <td>
           <%= a_user_profile.bio %>
+        </td>
+        
+        <td>
+          <%= a_user_profile.image %>
         </td>
 
         <td>

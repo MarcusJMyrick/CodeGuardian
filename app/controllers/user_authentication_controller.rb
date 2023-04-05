@@ -42,17 +42,25 @@ class UserAuthenticationController < ApplicationController
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.role = params.fetch("query_role")
-
+  
     save_status = @user.save
-
+  
     if save_status == true
       session[:user_id] = @user.id
-   
-      redirect_to("/", { :notice => "User account created successfully."})
+  
+      if @user.role == "company"
+        redirect_to("/companies", { :notice => "User account created successfully."})
+      elsif @user.role == "personal"
+        redirect_to("/user_profiles", { :notice => "User account created successfully."})
+      else
+        redirect_to("/", { :notice => "User account created successfully."})
+      end
+  
     else
       redirect_to("/user_sign_up", { :alert => @user.errors.full_messages.to_sentence })
     end
   end
+  
     
   def edit_profile_form
     render({ :template => "user_authentication/edit_profile.html.erb" })

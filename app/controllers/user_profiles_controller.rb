@@ -26,6 +26,7 @@ class UserProfilesController < ApplicationController
     the_user_profile.name = params.fetch("query_name")
     the_user_profile.user_id = params.fetch("query_user_id")
     the_user_profile.bio = params.fetch("query_bio")
+    the_user_profile.image = params.fetch("query_image")
 
     if the_user_profile.valid?
       the_user_profile.save

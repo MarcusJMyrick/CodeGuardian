@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_04_170114) do
+ActiveRecord::Schema.define(version: 2023_04_05_192255) do
 
   create_table "bounties", force: :cascade do |t|
     t.integer "bug_report_id"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2023_04_04_170114) do
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
