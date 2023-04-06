@@ -17,7 +17,7 @@
     <form action="/insert_user_profile" method="post">
       <div>
         <label for="name_box">
-          Name
+          Username
         </label>
 
         <input type="text" id="name_box" name="query_name">
@@ -25,10 +25,8 @@
 
       <div>
         <label for="user_id_box">
-          User
         </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
+        <input type="hidden" id="user_id_box" name="query_user_id" value="<%= @current_user.id %>">
       </div>
 
       <div>
@@ -63,11 +61,11 @@
         </th>
 
         <th>
-          Name
+          Username
         </th>
 
         <th>
-          User
+          User ID
         </th>
 
         <th>

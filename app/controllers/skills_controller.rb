@@ -20,7 +20,7 @@ class SkillsController < ApplicationController
   def create
     the_skill = Skill.new
     the_skill.skill = params.fetch("query_skill")
-    the_skill.user_profile_id = params.fetch("query_user_profile_id")
+    the_skill.user_id = params.fetch("query_user_id")
 
     if the_skill.valid?
       the_skill.save

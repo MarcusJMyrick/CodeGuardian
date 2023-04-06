@@ -24,11 +24,9 @@
       </div>
 
       <div>
-        <label for="user_profile_id_box">
-          User profile
+        <label for="user_id_box">
         </label>
-
-        <input type="text" id="user_profile_id_box" name="query_user_profile_id">
+        <input type="hidden" id="user_id_box" name="query_user_id" value="<%= @current_user.id %>">
       </div>
 
       <button>
@@ -52,7 +50,7 @@
         </th>
 
         <th>
-          User profile
+          User id
         </th>
 
         <th>
@@ -78,7 +76,7 @@
         </td>
 
         <td>
-          <%= a_skill.user_profile_id %>
+          <%= a_skill.user_id %>
         </td>
 
         <td>
