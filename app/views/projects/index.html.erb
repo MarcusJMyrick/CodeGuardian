@@ -92,43 +92,58 @@
       </tr>
 
       <% @list_of_projects.each do |a_project| %>
-      <tr>
-        <td>
-          <%= a_project.id %>
-        </td>
+        <tr>
+          <td>
+            <%= a_project.id %>
+          </td>
 
-        <td>
-          <%= a_project.company_id %>
-        </td>
+          <td>
+            <%= a_project.company_id %>
+          </td>
 
-        <td>
-          <%= a_project.name %>
-        </td>
+          <td>
+            <%= a_project.name %>
+          </td>
 
-        <td>
-          <%= a_project.description %>
-        </td>
+          <td>
+            <%= a_project.description %>
+          </td>
 
-        <td>
-          <%= a_project.repository_url %>
-        </td>
+          <td>
+            <%= a_project.repository_url %>
+          </td>
 
-        <td>
-          <%= time_ago_in_words(a_project.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_project.updated_at) %> ago
-        </td>
+          <td>
+            <%= time_ago_in_words(a_project.created_at) %> ago
+          </td>
+          <td>
+            <%= time_ago_in_words(a_project.updated_at) %> ago
+          </td>
 
-        <td>
-          <a href="/projects/<%= a_project.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
+          <td>
+            <a href="/projects/<%= a_project.id %>">
+              Show details
+            </a>
+          </td>
+        </tr>
       <% end %>
     </table>
   </div>
 </div>
 
 <hr>
+<!-- This is the card-->
+<div>
+  <div class="card w-96 glass">
+    <figure><img src="https://robohash.org/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="car!"/></figure>
+    <div class="card-body">
+      <h2 class="card-title flex justify-center">Name</h2>
+      <p class="flex justify-center">Description of project</p>
+      <div class="tabs tabs-boxed flex justify-center">
+        <a class="tab">Tab 1</a>
+        <a class="tab tab-active">Tab 2</a>
+        <a class="tab">Tab 3</a>
+      </div>
+    </div>
+  </div>
+</div>

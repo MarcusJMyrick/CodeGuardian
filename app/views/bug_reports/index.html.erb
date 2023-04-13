@@ -49,19 +49,30 @@
 
       <div>
         <label for="severity_level_box">
-          Severity level
+          Severity Level
         </label>
 
-        <input type="text" id="severity_level_box" name="query_severity_level">
+        <select id="severity_level_box" name="query_severity_level">
+          <option value="trivial">Trivial</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+          <option value="critical">Critical</option>
+        </select>
       </div>
+
 
       <div>
         <label for="status_box">
           Status
         </label>
 
-        <input type="text" id="status_box" name="query_status">
+        <select id="status_box" name="query_status">
+          <option value="not_complete">Not Complete</option>
+          <option value="complete">Complete</option>
+        </select>
       </div>
+
 
       <button>
         Create bug report
@@ -164,3 +175,5 @@
 </div>
 
 <hr>
+
+
