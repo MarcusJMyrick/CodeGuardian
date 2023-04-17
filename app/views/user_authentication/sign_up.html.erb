@@ -1,43 +1,3 @@
-<h1>Sign up</h1>
-
-<form action="/insert_user" method="post">
-
-  <div>
-    <label for="email_box">Email</label>
-    <input id="email_box" name="query_email" placeholder="Choose a email..." type="text">
-  </div>
-                 
-  <div>
-    <label for="role_select">Account Type</label>
-      
-    <select id="role_select" name="query_role">
-        <option value="">Select</option>
-        <option value="company">Company</option>
-        <option value="personal">Personal</option>
-    </select>
-</div>
-    
-  <div>
-    <label for="password_box">Password</label>
-    <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
-  </div>
-
-  <div>
-    <label for="password_confirmation_box">Password Confirmation</label>
-    <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
-  </div>
-
-  <button>
-    Sign up
-  </button>
-</form>
-
-<hr>
-
-<p>
-  Or, <a href="/user_sign_in">Sign in</a> instead.
-</p>
-
 <div class="hero min-h-screen bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
@@ -46,34 +6,41 @@
     </div>
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div class="card-body">
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Email</span>
-          </label>
-          <input type="text" placeholder="email" class="input input-bordered" />
-        </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Password</span>
-          </label>
-          <input type="text" placeholder="password" class="input input-bordered" />
-        </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Confirm Password</span>
-          </label>
-          <input type="text" placeholder="confirm password" class="input input-bordered" />
-          <label class="label">
-            <a href="#" class="label-text-alt link link-hover">Or, Sign in instead!</a>
-          </label>
-        </div>
-        <select class="select select-bordered w-full max-w-xs">
-          <option disabled selected>Account Type</option>
-          <option>Company</option>
-          <option>Personal</option>
-        </select>
-        <div class="form-control mt-6">
-          <button class="btn btn-primary">Login</button>
+        <form action="/insert_user" method="post">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Email</span>
+            </label>
+            <input id="email_box" name="query_email" placeholder="Choose an email..." type="text" class="input input-bordered" required>
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Password</span>
+            </label>
+            <input id="password_box" name="query_password" placeholder="Choose a password..." type="password" class="input input-bordered" required>
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Confirm Password</span>
+            </label>
+            <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password" class="input input-bordered" required>
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Account Type</span>
+            </label>
+            <select id="role_select" name="query_role" class="select select-bordered w-full max-w-xs" required>
+              <option disabled selected value="">Select an account type...</option>
+              <option value="company">Company</option>
+              <option value="personal">Personal</option>
+            </select>
+          </div>
+          <div class="form-control mt-6">
+            <button type="submit" class="btn btn-primary bg-blue-700">Sign Up</button>
+          </div>
+        </form>
+        <div class="form-control mt-4">
+          <a href="/user_sign_in" class="label label-text-alt link link-hover">Or, Sign in instead!</a>
         </div>
       </div>
     </div>

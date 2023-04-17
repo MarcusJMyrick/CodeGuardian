@@ -1,118 +1,46 @@
-<div>
-  <div>
-    <h1>
-      List of all companies
-    </h1>
-  </div>
-</div>
 
 <hr>
-
-<div>
-  <div>
-    <h2>
-      Add a new company
-    </h2>
-
+<div class="mt-12 mb-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6">
+  <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+    <%= image_tag 'microsoft.svg', class: 'h-12 w-auto mx-auto', loading: 'lazy', alt: 'client logo' %>
+  </div>
+  <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+    <%= image_tag 'airbnb.svg', class: 'h-12 w-auto mx-auto', loading: 'lazy', alt: 'client logo' %>
+  </div>
+  <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+    <%= image_tag 'google.svg', class: 'h-9 w-auto m-auto', loading: 'lazy', alt: 'client logo' %>
+  </div>
+  <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+    <%= image_tag 'ge.svg', class: 'h-12 w-auto mx-auto', loading: 'lazy', alt: 'client logo' %>
+  </div>
+  <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+    <%= image_tag 'netflix.svg', class: 'h-8 w-auto m-auto', loading: 'lazy', alt: 'client logo' %>
+  </div>
+  <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+    <%= image_tag 'google-cloud.svg', class: 'h-12 w-auto mx-auto', loading: 'lazy', alt: 'client logo' %>
+  </div>
+</div>
+<div class="hero min-h-screen bg-base-200 flex justify-center items-center h-screen">
+  <div class="bg-base-100 p-8 rounded-lg shadow-lg w-full max-w-md ">
+    <h2 class="text-2xl font-bold mb-4">Add a new company</h2>
     <form action="/insert_company" method="post">
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name">
+      <div class="mb-4">
+        <label for="name_box" class="block text-gray-700 font-bold mb-2">Name</label>
+        <input type="text" id="name_box" name="query_name" class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">
       </div>
-
-      <div>
-        <label for="description_box">
-          Description
-        </label>
-
-        <textarea id="description_box" name="query_description" rows="3"></textarea>
+      <div class="mb-4">
+        <label for="description_box" class="block text-gray-700 font-bold mb-2">Description</label>
+        <textarea id="description_box" name="query_description" rows="3" class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"></textarea>
       </div>
-
-      <div>
-        <label for="website_box">
-          Website
-        </label>
-
-        <input type="text" id="website_box" name="query_website">
+      <div class="mb-4">
+        <label for="website_box" class="block text-gray-700 font-bold mb-2">Website</label>
+        <input type="text" id="website_box" name="query_website" class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">
       </div>
-
-      <button>
-        Create company
-      </button>
+      <div class="flex justify-end">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          Create company
+        </button>
+      </div>
     </form>
   </div>
 </div>
-
-<hr>
-<div>
-  <div>
-    <table border="1">
-      <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Name
-        </th>
-
-        <th>
-          Description
-        </th>
-
-        <th>
-          Website
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @list_of_companies.each do |a_company| %>
-      <tr>
-        <td>
-          <%= a_company.id %>
-        </td>
-
-        <td>
-          <%= a_company.name %>
-        </td>
-
-        <td>
-          <%= a_company.description %>
-        </td>
-
-        <td>
-          <%= a_company.website %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_company.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_company.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/companies/<%= a_company.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-</div>
-
-<hr>
