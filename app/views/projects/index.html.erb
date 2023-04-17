@@ -1,84 +1,249 @@
-
-<div>
-
+<div class="hero min-h-screen" style="background-image: url('<%= asset_path('bounty.jpeg') %>');">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-center text-neutral-content">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-6xl font-bold text-shadow-lg">Hack & Cash In</h1>
+      <p class="mb-5 text-lg text-shadow-lg">We have a range of bounties available for security researchers and ethical hackers to solve. Are you up for the challenge?</p>
+    </div>
+  </div>
 </div>
 <!-- This is the card-->
-
 <div>
-  <label class="swap swap-rotate text-base">
+  <h1 class="mb-5 text-6xl font-bold text-shadow-lg">Bounty Hunt: Time is Ticking to Collect these Rewards</h1>
+</div>
+<div class="mt-12 mb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pl-6">
+  <div>
+    <label class="swap swap-rotate text-base">
 
-  <!-- this hidden checkbox controls the state -->
-  <input type="checkbox" />
+      <!-- this hidden checkbox controls the state -->
+      <input type="checkbox" />
 
-    <div class="swap-off">
-      <div class="card w-96 bg-base-100 shadow-xl image-full">
-        <figure><img src="https://robohash.org/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" /></figure>
-        <div class="card-body">
-          <h2 class="card-title justify-center">DataSwift</h2>
-          <h3>Data Collection UX</h3>
-          <p>A ruby on rails project that collects and saves user data</p>
-          <div class="stats bg-primary text-primary-content">
+      <div class="swap-off">
+        <div class="card w-96 bg-base-100 shadow-xl image-full">
+          <figure><img src="https://robohash.org/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" /></figure>
+          <div class="card-body">
+            <h2 class="card-title justify-center">DataSwift</h2>
+            <h3>Data Collection UX</h3>
+            <p>A ruby on rails project that collects and saves user data</p>
+            <div class="stats bg-primary text-primary-content">
 
-            <div class="stat">
-              <div class="stat-title">Bounty</div>
-              <div class="stat-value">$400</div>
-              <div class="stat-actions">
-                <button class="btn btn-sm btn-success">accept</button>
-              </div>
-            </div>
-
-            <div class="stat">
-              <div class="stat-title">Time Left</div>
-              <div class="stat-value">
-                <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
-                  <div class="flex flex-col">
-                    <span class="countdown font-mono text-md">
-                      <span style="--value:<%= @days_remaining %>;"></span>
-                    </span>
-                    <span class="text-sm">days</span>
-                  </div>
-                  <div class="flex flex-col">
-                    <span class="countdown font-mono text-md">
-                      <span style="--value:<%= @hours_remaining %>;"></span>
-                    </span>
-                    <span class="text-sm">hours</span>
-                  </div>
-                  <div class="flex flex-col">
-                    <span class="countdown font-mono text-md">
-                      <span style="--value:<%= @minutes_remaining %>;"></span>
-                    </span>
-                    <span class="text-sm">min</span>
-                  </div>
+              <div class="stat">
+                <div class="stat-title">Bounty</div>
+                <div class="stat-value">$400</div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm btn-success">accept</button>
                 </div>
               </div>
-              <div class="stat-actions">
-                <button class="btn btn-sm">repository</button>
+
+              <div class="stat">
+                <div class="stat-title">Time Left</div>
+                <div class="stat-value">
+                  <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @days_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">days</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @hours_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">hours</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @minutes_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">min</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm">repository</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swap-on">
+        <div>
+          <div class="card w-96 bg-neutral text-neutral-content">
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Bug Report Title</h2>
+              <p>I am haveing lots and lots of problems with my application I am in need of a lot of help</p>
+              <div>
+                <p>Difficulty</p>
+                <progress class="progress progress-error w-56" value="100" max="100"></progress>
+              </div>
+              <div class="card-actions justify-center">
+                <button class="btn btn-primary">Accept</button>
+                <button class="btn btn-secondary">Message</button>
+                <button class="btn btn-secondary">repo</button>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-    </div>
+    </label>
+  </div>
+  <div>
+    <label class="swap swap-rotate text-base">
 
-    <div class="swap-on">
-      <div>
-        <div class="card w-96 bg-neutral text-neutral-content">
-          <div class="card-body items-center text-center">
-            <h2 class="card-title">Bug Report Title</h2>
-            <p>I am haveing lots and lots of problems with my application I am in need of a lot of help</p>
-            <div>
-              <p>Difficulty</p>
-              <progress class="progress progress-error w-56" value="100" max="100"></progress>
-            </div>
-            <div class="card-actions justify-center">
-              <button class="btn btn-primary">Accept</button>
-              <button class="btn btn-secondary">Message</button>
-              <button class="btn btn-secondary">repo</button>
+      <!-- this hidden checkbox controls the state -->
+      <input type="checkbox" />
+
+      <div class="swap-off">
+        <div class="card w-96 bg-base-100 shadow-xl image-full">
+          <figure><img src="https://robohash.org/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" /></figure>
+          <div class="card-body">
+            <h2 class="card-title justify-center">DataSwift</h2>
+            <h3>Data Collection UX</h3>
+            <p>A ruby on rails project that collects and saves user data</p>
+            <div class="stats bg-primary text-primary-content">
+
+              <div class="stat">
+                <div class="stat-title">Bounty</div>
+                <div class="stat-value">$400</div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm btn-success">accept</button>
+                </div>
+              </div>
+
+              <div class="stat">
+                <div class="stat-title">Time Left</div>
+                <div class="stat-value">
+                  <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @days_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">days</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @hours_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">hours</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @minutes_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">min</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm">repository</button>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </label>
+
+      <div class="swap-on">
+        <div>
+          <div class="card w-96 bg-neutral text-neutral-content">
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Bug Report Title</h2>
+              <p>I am haveing lots and lots of problems with my application I am in need of a lot of help</p>
+              <div>
+                <p>Difficulty</p>
+                <progress class="progress progress-error w-56" value="100" max="100"></progress>
+              </div>
+              <div class="card-actions justify-center">
+                <button class="btn btn-primary">Accept</button>
+                <button class="btn btn-secondary">Message</button>
+                <button class="btn btn-secondary">repo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+  <div>
+    <label class="swap swap-rotate text-base">
+
+      <!-- this hidden checkbox controls the state -->
+      <input type="checkbox" />
+
+      <div class="swap-off">
+        <div class="card w-96 bg-base-100 shadow-xl image-full">
+          <figure><img src="https://robohash.org/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" /></figure>
+          <div class="card-body">
+            <h2 class="card-title justify-center">DataSwift</h2>
+            <h3>Data Collection UX</h3>
+            <p>A ruby on rails project that collects and saves user data</p>
+            <div class="stats bg-primary text-primary-content">
+
+              <div class="stat">
+                <div class="stat-title">Bounty</div>
+                <div class="stat-value">$400</div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm btn-success">accept</button>
+                </div>
+              </div>
+
+              <div class="stat">
+                <div class="stat-title">Time Left</div>
+                <div class="stat-value">
+                  <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @days_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">days</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @hours_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">hours</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @minutes_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">min</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm">repository</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swap-on">
+        <div>
+          <div class="card w-96 bg-neutral text-neutral-content">
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Bug Report Title</h2>
+              <p>I am haveing lots and lots of problems with my application I am in need of a lot of help</p>
+              <div>
+                <p>Difficulty</p>
+                <progress class="progress progress-error w-56" value="100" max="100"></progress>
+              </div>
+              <div class="card-actions justify-center">
+                <button class="btn btn-primary">Accept</button>
+                <button class="btn btn-secondary">Message</button>
+                <button class="btn btn-secondary">repo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
 </div>
