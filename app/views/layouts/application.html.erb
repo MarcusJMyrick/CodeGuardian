@@ -19,25 +19,45 @@
   </head>
 
   <body>
-    <div><a href="/messages">messages</a>
-      <a href="/skills">skills</a>
-      <a href="/bug_reports">bug report</a>
-      <a href="/bounties">Bounty</a>
-      <a href="/company_representatives">Company Rep</a>
-      <a href="/companies">Company</a>
-      <a href="/projects">Projects</a>
-      <a href="/user_profiles">Profiles</a>
-      <a href="/user_sign_up">Sign Up</a>
-      <a href="/user_sign_in">Sign In</a>
+    <div>
+      <a href="/messages" class="btn btn-ghost normal-case">messages</a>
+      <a href="/skills" class="btn btn-ghost normal-case">skills</a>
+      <a href="/bug_reports" class="btn btn-ghost normal-case">bug report</a>
+      <a href="/bounties" class="btn btn-ghost normal-case">Bounty</a>
+      <a href="/company_representatives" class="btn btn-ghost normal-case">Company Rep</a>
+      <a href="/companies" class="btn btn-ghost normal-case">Company</a>
+      <a href="/projects" class="btn btn-ghost normal-case">Projects</a>
+      <a href="/user_profiles" class="btn btn-ghost normal-case">Profiles</a>
+      <a href="/user_sign_up" class="btn btn-ghost normal-case">Sign Up</a>
+      <a href="/user_sign_in" class="btn btn-ghost normal-case">Sign In</a>
     </div>
-    <a href="/">home</a>
 
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl">Code Guardian</a>
+        <a class="btn btn-ghost normal-case text-xl" href="/">Code Guardian</a>
       </div>
       <div class="flex-none">
         <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost normal-case">
+            <div>
+              <a href="/projects">projects</a>
+            </div>
+          </label>
+          <label tabindex="0" class="btn btn-ghost normal-case">
+            <div>
+              <a href="/messages">messages</a>
+            </div>
+          </label>
+          <label tabindex="0" class="btn btn-ghost normal-case">
+            <div>
+              <a href="/user_sign_up">Sign Up</a>
+            </div>
+          </label>
+          <label tabindex="0" class="btn btn-ghost normal-case">
+            <div>
+              <a href="/user_sign_in">Sign In</a>
+            </div>
+          </label>
           <label tabindex="0" class="btn btn-ghost btn-circle">
             <div class="indicator">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
