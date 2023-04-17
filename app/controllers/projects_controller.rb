@@ -4,6 +4,24 @@ class ProjectsController < ApplicationController
 
     @list_of_projects = matching_projects.order({ :created_at => :desc })
 
+    # Specify the end date and time
+    end_time = Time.new(2023, 4, 30, 23, 59, 59, "+00:00")
+
+    # Calculate the time remaining
+    time_remaining = end_time - Time.now
+
+    # Convert the time remaining into days, hours, minutes, and seconds
+    days_remaining = (time_remaining / 86400).to_i
+    hours_remaining = ((time_remaining % 86400) / 3600).to_i
+    minutes_remaining = ((time_remaining % 3600) / 60).to_i
+    seconds_remaining = (time_remaining % 60).to_i
+
+    # Pass the time remaining variables to the view
+    @days_remaining = days_remaining
+    @hours_remaining = hours_remaining
+    @minutes_remaining = minutes_remaining
+    @seconds_remaining = seconds_remaining
+
     render({ :template => "projects/index.html.erb" })
   end
 
