@@ -1,130 +1,70 @@
-<div>
-  <div>
-    <h1>
-      List of all user profiles
-    </h1>
+<div class="hero min-h-screen bg-base-200 flex justify-center items-center h-screen">
+  <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div class="card-body">
+      <h2 class="text-xl font-semibold mb-6">Make your profile</h2>
+      <form action="/insert_user_profile" method="post">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Username</span>
+          </label>
+          <input type="text" id="name_box" name="query_name" placeholder="Username" class="input input-bordered">
+        </div>
+        <div class="form-control">
+          <input type="hidden" id="user_id_box" name="query_user_id" value="<%= @current_user.id %>">
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Bio</span>
+          </label>
+          <textarea id="bio_box" name="query_bio" rows="3" placeholder="Bio" class="textarea textarea-bordered"></textarea>
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Image</span>
+          </label>
+          <input type="text" id="image_box" name="query_image" placeholder="Image" class="input input-bordered">
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Skills (Max 5)</span>
+          </label>
+          <ul class="list list-disc list-inside">
+            <li>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="skills[]" value="JavaScript" class="form-checkbox">
+                <span class="ml-2">JavaScript</span>
+              </label>
+            </li>
+            <li>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="skills[]" value="Python" class="form-checkbox">
+                <span class="ml-2">Python</span>
+              </label>
+            </li>
+            <li>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="skills[]" value="Java" class="form-checkbox">
+                <span class="ml-2">Java</span>
+              </label>
+            </li>
+            <li>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="skills[]" value="C++" class="form-checkbox">
+                <span class="ml-2">C++</span>
+              </label>
+            </li>
+            <li>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="skills[]" value="React" class="form-checkbox">
+                <span class="ml-2">React</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="form-control mt-6">
+          <button class="btn btn-primary">Create user profile</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
-
-<hr>
-
-<div>
-  <div>
-    <h2>
-      Add a new user profile
-    </h2>
-
-    <form action="/insert_user_profile" method="post">
-      <div>
-        <label for="name_box">
-          Username
-        </label>
-
-        <input type="text" id="name_box" name="query_name">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-        </label>
-        <input type="hidden" id="user_id_box" name="query_user_id" value="<%= @current_user.id %>">
-      </div>
-
-      <div>
-        <label for="bio_box">
-          Bio
-        </label>
-
-        <textarea id="bio_box" name="query_bio" rows="3"></textarea>
-      </div>
-      <div>
-        <label for="image_box">
-          Image
-        </label>
-
-        <input type="text" id="image_box" name="query_image">
-      </div>
-
-      <button>
-        Create user profile
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
-<div>
-  <div>
-    <table border="1">
-      <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Username
-        </th>
-
-        <th>
-          User ID
-        </th>
-
-        <th>
-          Bio
-        </th>
-        <th>
-          Image
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @list_of_user_profiles.each do |a_user_profile| %>
-      <tr>
-        <td>
-          <%= a_user_profile.id %>
-        </td>
-
-        <td>
-          <%= a_user_profile.name %>
-        </td>
-
-        <td>
-          <%= a_user_profile.user_id %>
-        </td>
-
-        <td>
-          <%= a_user_profile.bio %>
-        </td>
-        
-        <td>
-          <%= a_user_profile.image %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_user_profile.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_user_profile.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/user_profiles/<%= a_user_profile.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-</div>
-
-<hr>

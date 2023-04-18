@@ -9,10 +9,11 @@
 </div>
 <!-- This is the card-->
 <div>
-  <h1 class="mb-5 text-6xl font-bold text-shadow-lg">Bounty Hunt: Time is Ticking to Collect these Rewards</h1>
+  <h1 class="text-center mb-5 text-4xl font-bold mt-10">Bounty Hunt: Time is Ticking to Collect these Rewards</h1>
 </div>
+
 <div class="mt-12 mb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pl-6">
-  <div>
+  <div class="w-full md:w-1/3">
     <label class="swap swap-rotate text-base">
 
       <!-- this hidden checkbox controls the state -->
@@ -20,11 +21,89 @@
 
       <div class="swap-off">
         <div class="card w-96 bg-base-100 shadow-xl image-full">
-          <figure><img src="https://robohash.org/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" /></figure>
+          <figure><%= image_tag 'tech_logo.png' %></figure>
           <div class="card-body">
             <h2 class="card-title justify-center">DataSwift</h2>
             <h3>Data Collection UX</h3>
             <p>A ruby on rails project that collects and saves user data</p>
+            <div class="stats bg-primary text-primary-content">
+
+              <div class="stat">
+                <div class="stat-title">Bounty</div>
+                <div class="stat-value">$120</div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm btn-success">accept</button>
+                </div>
+              </div>
+
+              <div class="stat">
+                <div class="stat-title">Time Left</div>
+                <div class="stat-value">
+                  <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @days_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">days</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @hours_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">hours</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @minutes_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">min</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm">repository</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swap-on">
+        <div>
+          <div class="card w-96 bg-neutral text-neutral-content">
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">DataSwift Bug Report</h2>
+              <p>Website not converting visitors to leads effectively.</p>
+              <div>
+                <p>Difficulty</p>
+                <progress class="progress progress-error w-56" value="50" max="100"></progress>
+              </div>
+              <div class="card-actions justify-center">
+                <button class="btn btn-primary">Accept</button>
+                <button class="btn btn-secondary">Message</button>
+                <button class="btn btn-secondary">repo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+  <div class="w-full md:w-1/3">
+    <label class="swap swap-rotate text-base">
+
+      <!-- this hidden checkbox controls the state -->
+      <input type="checkbox" />
+
+      <div class="swap-off">
+        <div class="card w-96 bg-base-100 shadow-xl image-full">
+          <figure><%= image_tag 'tech_logo2.png' %><</figure>
+          <div class="card-body">
+            <h2 class="card-title justify-center">NetGenius</h2>
+            <h3>Network performance optimization</h3>
+            <p> A platform that offers network monitoring and management tools to help businesses optimize their network performance and security.</p>
             <div class="stats bg-primary text-primary-content">
 
               <div class="stat">
@@ -73,8 +152,86 @@
         <div>
           <div class="card w-96 bg-neutral text-neutral-content">
             <div class="card-body items-center text-center">
-              <h2 class="card-title">Bug Report Title</h2>
-              <p>I am haveing lots and lots of problems with my application I am in need of a lot of help</p>
+              <h2 class="card-title">NetGenius Bug Report</h2>
+              <p>Network performance slowing down during peak usage hours.</p>
+              <div>
+                <p>Difficulty</p>
+                <progress class="progress progress-error w-56" value="70" max="100"></progress>
+              </div>
+              <div class="card-actions justify-center">
+                <button class="btn btn-primary">Accept</button>
+                <button class="btn btn-secondary">Message</button>
+                <button class="btn btn-secondary">repo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+  <div class="w-full md:w-1/3">
+    <label class="swap swap-rotate text-base">
+
+      <!-- this hidden checkbox controls the state -->
+      <input type="checkbox" />
+
+      <div class="swap-off">
+        <div class="card w-96 bg-base-100 shadow-xl image-full">
+          <figure><%= image_tag 'tech_logo3.png' %><</figure>
+          <div class="card-body">
+            <h2 class="card-title justify-center">CodeCape</h2>
+            <h3>Code redundancy reduction</h3>
+            <p>A company focused on developing quantum computing hardware and software to enable faster and more efficient computation.</p>
+            <div class="stats bg-primary text-primary-content">
+
+              <div class="stat">
+                <div class="stat-title">Bounty</div>
+                <div class="stat-value">$200</div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm btn-success">accept</button>
+                </div>
+              </div>
+
+              <div class="stat">
+                <div class="stat-title">Time Left</div>
+                <div class="stat-value">
+                  <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @days_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">days</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @hours_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">hours</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @minutes_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">min</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm">repository</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swap-on">
+        <div>
+          <div class="card w-96 bg-neutral text-neutral-content">
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">CodeCape Bug Report</h2>
+              <p>Big data processing taking longer than expected.</p>
               <div>
                 <p>Difficulty</p>
                 <progress class="progress progress-error w-56" value="100" max="100"></progress>
@@ -90,7 +247,7 @@
       </div>
     </label>
   </div>
-  <div>
+  <div class="w-full md:w-1/3">
     <label class="swap swap-rotate text-base">
 
       <!-- this hidden checkbox controls the state -->
@@ -98,16 +255,16 @@
 
       <div class="swap-off">
         <div class="card w-96 bg-base-100 shadow-xl image-full">
-          <figure><img src="https://robohash.org/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" /></figure>
+          <figure><%= image_tag 'techlogo3.png' %></figure>
           <div class="card-body">
-            <h2 class="card-title justify-center">DataSwift</h2>
-            <h3>Data Collection UX</h3>
-            <p>A ruby on rails project that collects and saves user data</p>
+            <h2 class="card-title justify-center">CONEXRIS</h2>
+            <h3>Thought-controlled devices</h3>
+            <p>A startup focused on developing brain-computer interface technology for a variety of applications such as medical, gaming and communication.</p>
             <div class="stats bg-primary text-primary-content">
 
               <div class="stat">
                 <div class="stat-title">Bounty</div>
-                <div class="stat-value">$400</div>
+                <div class="stat-value">$50</div>
                 <div class="stat-actions">
                   <button class="btn btn-sm btn-success">accept</button>
                 </div>
@@ -151,11 +308,11 @@
         <div>
           <div class="card w-96 bg-neutral text-neutral-content">
             <div class="card-body items-center text-center">
-              <h2 class="card-title">Bug Report Title</h2>
-              <p>I am haveing lots and lots of problems with my application I am in need of a lot of help</p>
+              <h2 class="card-title">CONEXRIS Bug Report</h2>
+              <p>Software systems not integrating properly with each other.</p>
               <div>
                 <p>Difficulty</p>
-                <progress class="progress progress-error w-56" value="100" max="100"></progress>
+                <progress class="progress progress-error w-56" value="50" max="100"></progress>
               </div>
               <div class="card-actions justify-center">
                 <button class="btn btn-primary">Accept</button>
@@ -168,7 +325,7 @@
       </div>
     </label>
   </div>
-  <div>
+  <div class="w-full md:w-1/3">
     <label class="swap swap-rotate text-base">
 
       <!-- this hidden checkbox controls the state -->
@@ -176,16 +333,16 @@
 
       <div class="swap-off">
         <div class="card w-96 bg-base-100 shadow-xl image-full">
-          <figure><img src="https://robohash.org/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" /></figure>
+          <figure><%= image_tag 'techlogo5.png' %></figure>
           <div class="card-body">
-            <h2 class="card-title justify-center">DataSwift</h2>
-            <h3>Data Collection UX</h3>
-            <p>A ruby on rails project that collects and saves user data</p>
+            <h2 class="card-title justify-center">firefly</h2>
+            <h3>IoT security threats</h3>
+            <p>A cybersecurity firm that specializes in securing connected devices and networks in the Internet of Things (IoT) ecosystem.</p>
             <div class="stats bg-primary text-primary-content">
 
               <div class="stat">
                 <div class="stat-title">Bounty</div>
-                <div class="stat-value">$400</div>
+                <div class="stat-value">$450</div>
                 <div class="stat-actions">
                   <button class="btn btn-sm btn-success">accept</button>
                 </div>
@@ -229,11 +386,89 @@
         <div>
           <div class="card w-96 bg-neutral text-neutral-content">
             <div class="card-body items-center text-center">
-              <h2 class="card-title">Bug Report Title</h2>
-              <p>I am haveing lots and lots of problems with my application I am in need of a lot of help</p>
+              <h2 class="card-title">Firefly Bug Report</h2>
+              <p>IoT devices not functioning properly with certain networks or systems.</p>
               <div>
                 <p>Difficulty</p>
-                <progress class="progress progress-error w-56" value="100" max="100"></progress>
+                <progress class="progress progress-error w-56" value="28" max="100"></progress>
+              </div>
+              <div class="card-actions justify-center">
+                <button class="btn btn-primary">Accept</button>
+                <button class="btn btn-secondary">Message</button>
+                <button class="btn btn-secondary">repo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+  <div class="w-full md:w-1/3">
+    <label class="swap swap-rotate text-base">
+
+      <!-- this hidden checkbox controls the state -->
+      <input type="checkbox" />
+
+      <div class="swap-off">
+        <div class="card w-96 bg-base-100 shadow-xl image-full">
+          <figure><%= image_tag 'techlogo6.png' %></figure>
+          <div class="card-body">
+            <h2 class="card-title justify-center">kinder</h2>
+            <h3>Enterprise software integration</h3>
+            <p> A company that provides digital solutions for small businesses to help them grow and thrive online.</p>
+            <div class="stats bg-primary text-primary-content">
+
+              <div class="stat">
+                <div class="stat-title">Bounty</div>
+                <div class="stat-value">$100</div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm btn-success">accept</button>
+                </div>
+              </div>
+
+              <div class="stat">
+                <div class="stat-title">Time Left</div>
+                <div class="stat-value">
+                  <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @days_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">days</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @hours_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">hours</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="countdown font-mono text-md">
+                        <span style="--value:<%= @minutes_remaining %>;"></span>
+                      </span>
+                      <span class="text-sm">min</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-actions">
+                  <button class="btn btn-sm">repository</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swap-on">
+        <div>
+          <div class="card w-96 bg-neutral text-neutral-content">
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Kinder Bug Report</h2>
+              <p>Encryption keys generated are not secure enough.</p>
+              <div>
+                <p>Difficulty</p>
+                <progress class="progress progress-error w-56" value="80" max="100"></progress>
               </div>
               <div class="card-actions justify-center">
                 <button class="btn btn-primary">Accept</button>
