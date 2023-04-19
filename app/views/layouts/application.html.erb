@@ -19,7 +19,7 @@
   </head>
 
   <body>
-    <div>
+    <%# <div>
       <a href="/messages" class="btn btn-ghost normal-case">messages</a>
       <a href="/skills" class="btn btn-ghost normal-case">skills</a>
       <a href="/bug_reports" class="btn btn-ghost normal-case">bug report</a>
@@ -30,13 +30,18 @@
       <a href="/user_profiles" class="btn btn-ghost normal-case">Profiles</a>
       <a href="/user_sign_up" class="btn btn-ghost normal-case">Sign Up</a>
       <a href="/user_sign_in" class="btn btn-ghost normal-case">Sign In</a>
-    </div>
+    </div> %>
 
     <div class="navbar bg-base-100">
       <div class="flex-1">
         <a class="btn btn-ghost normal-case text-xl" href="/">Code Guardian</a>
       </div>
       <div class="flex-none">
+        <label tabindex="0" class="btn btn-ghost normal-case">
+            <div>
+              <a href="/companies">Company</a>
+            </div>
+          </label>
         <label tabindex="0" class="btn btn-ghost normal-case">
             <div>
               <a href="/projects">bounties</a>
